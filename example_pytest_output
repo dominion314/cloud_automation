@@ -1,0 +1,77 @@
+terry@terryLinux:~/DominickLundberg/aws_onboarding/dotst$ pytest -s
+[1m=============================================================== test session starts ================================================================[0m
+platform linux -- Python 3.8.10, pytest-4.6.9, py-1.8.1, pluggy-0.13.0
+rootdir: /home/terry/DominickLundberg/aws_onboarding/dotst
+[1mcollecting ... [0m[1mcollected 1 item                                                                                                                                   [0m
+
+test_aw2.py Namespace(app='', cloud='aws', cloud_secret='', id='172.17.0.1', ins='', region='us-east-1', subnet='127.0.0.1')
+ 
+###############################################################################
+#    ____ _                 _                                                 #
+#   / ___| | ___  _   _  __| |                                                #
+#  | |   | |/ _ \| | | |/ _` |                                                #
+#  | |___| | (_) | |_| | (_| |                                                #
+#   \____|_|\___/ \__,_|\__,_|                    _   _                       #
+#             / \  _   _| |_ ___  _ __ ___   __ _| |_(_) ___  _ __            #
+#            / _ \| | | | __/ _ \| '_ ` _ \ / _` | __| |/ _ \| '_ \           #
+#           / ___ \ |_| | || (_) | | | | | | (_| | |_| | (_) | | | |          #
+#          /_/   \_\__,_|\__\___/|_| |_| |_|\__,_|\__|_|\___/|_| |_|          #
+#                                | \ | | _____      __ |  _ \ ___  ___ _ __   #
+#                                |  \| |/ _ \ \ /\ / / | |_) / _ \/ _ \ '__|  #
+#                                | |\  |  __/\ V  V /  |  __/  __/  __/ |     #
+#                                |_| \_|\___| \_/\_/   |_|   \___|\___|_|     #
+#                                                                             #
+###############################################################################
+#                                                                             #
+#  =                                                                          #
+#  =                                                                          #
+#                                                                             #
+#       
+#                                                                             #
+###############################################################################
+
+Specify Application: tapp
+Specify Application Instance: 0
+
+[31m[Unknown Response][0m Instance should be unique from below list
+- 0
+
+Specify Application Instance: 0
+
+[31m[Unknown Response][0m Instance should be unique from below list
+- 0
+
+Specify Application Instance: 1
+[31m[-s][0m Argument invalid
+Specify Subnet: 172.0.0.1
+
+[32m[Peer Information][0m
+Cloud: aws
+Region: us-east-1
+Peer_Name: tapp_aws_ue1_1_bf80e59d8aca4f84b4489d6d316e5c00
+Peer_Subnet: 172.0.0.1
+Peer_Id: 172.17.0.1
+
+Proceed with Above Information? y
+[32m[Info][0m Creating Terraform Config File for 'tapp_aws_ue1_1_bf80e59d8aca4f84b4489d6d316e5c00'
+[32m[Info][0m Terraform Config File Created
+[32m.[0m
+
+[33m================================================================= warnings summary =================================================================[0m
+aw2.py:33
+  /home/terry/DominickLundberg/aws_onboarding/dotst/aw2.py:33: DeprecationWarning: invalid escape sequence \|
+    banner = """
+
+-- Docs: https://docs.pytest.org/en/latest/warnings.html
+[33m[1m====================================================== 1 passed, 1 warnings in 29.66 seconds =======================================================[0m
+[0mterry@terryLinux:~/DominickLundberg/aws_onboarding/dotst$ ls -ld tap*
+drwxrwxr-x 2 terry terry 4096 Nov  2 09:13 tapp_aws_ue1_0_72b8188440744444b406031f191f854e
+drwxrwxr-x 2 terry terry 4096 Nov  2 10:32 tapp_aws_ue1_1_bf80e59d8aca4f84b4489d6d316e5c00
+-rw-rw-r-- 1 terry terry    3 Nov  2 08:18 tapp_aws_us-east1_0_FEED.json
+terry@terryLinux:~/DominickLundberg/aws_onboarding/dotst$ tree -a tapp_aws*[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C_*u*e*[C*[K
+[01;34mtapp_aws_ue1_0_72b8188440744444b406031f191f854e[00m
+└── tapp_aws_ue1_0_72b8188440744444b406031f191f854e.tf
+[01;34mtapp_aws_ue1_1_bf80e59d8aca4f84b4489d6d316e5c00[00m
+└── tapp_aws_ue1_1_bf80e59d8aca4f84b4489d6d316e5c00.tf
+
+0 directories, 2 files
