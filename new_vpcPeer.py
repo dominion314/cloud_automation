@@ -3,7 +3,7 @@ Created on November 2020
 
 @author: dominickhernandez
 '''
-   
+
 from pprint import pprint  
 ##  useful to 'pretty print, or pretty format' data-structures, that are nested or not.
 import json, os     ## module for JSON data encoding and decoding.
@@ -19,7 +19,6 @@ banner = """
 |\ ||__ |  |   |__)|__ |__ |__)   /__`/  `|__)||__)|  
 | \||___|/\|   |   |___|___|  \   .__/\__,|  \||   |  
                                                       
-
 """
 
 Dependency = [
@@ -41,15 +40,14 @@ try:
     import colorama                ## Makes ANSI escape character sequences for producing colored terminal text.
 
 except ImportError:
-    ## If a ImportError exception is encountered during the try block, 
+    ## If an ImportError exception is encountered during the try block, 
     ## this will print a message telling the user to install the necessary modules.
     print()
     print('Install the following dependencies and try again:', 'red')
     print('sudo pip3 install -t /opt/python3/lib/python3.7/site-packages/')  ## Tells the user what to install:
 
     for dep in Dependency: ## Loop through the Dependency list as 'dep', telling the user each "- dep" they should install.
-        print('- ' + dep)
-        
+        print('- ' + dep)  
     exit()
 
 colorama.init()  ## Initialize colorama.
@@ -58,15 +56,7 @@ class Arguments(object):
     """
     Used for Arguments from the command line (--help gives usage).
     """
-    ## When this class, 'Arguments' is called as a function, this '__init__()' function will be executed
-    ## and will automatically 'return' a programming object of type 'Arguments'.
-    ##
-    ## Note that 'self' is a reference to the current instance of this class, and it
-    ## exists before the instance is returned as an object for use outside of the class.
-    ##
-    ## The arguments defined are 'self', so '__init__()' knows what to initialize, and
-    ## 'description' which is set by default to and empty string if not specified by the 
-    ## function that called this.
+    
     def __init__(self, description=''):
         """
         Default arguments for any job
